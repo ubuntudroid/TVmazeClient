@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="72dp"
+	android:paddingStart="16dp"
+	android:paddingEnd="16dp">
+
+	<RelativeLayout
+		android:id="@+id/rl_1"
+		android:layout_width="40dp"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true">
+
+		<TextView
+			android:id="@+id/schedule_episode_airtime"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+			android:textColor="@android:color/secondary_text_light"
+			tools:text="04:00"/>
+		<TextView
+			android:id="@+id/schedule_episode_runtime"
+			android:layout_below="@+id/schedule_episode_airtime"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+			android:textColor="@android:color/secondary_text_light"
+			tools:text="30 min"/>
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:layout_toEndOf="@+id/rl_1"
+		android:layout_marginStart="16dp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_centerVertical="true">
+
+		<TextView
+			android:id="@+id/schedule_episode_show_name"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+			android:textColor="@android:color/primary_text_light"
+			android:lines="1"
+			tools:text="Rusty Rivets"/>
+
+		<TextView
+			android:id="@+id/schedule_episode_episode_name"
+			android:layout_below="@+id/schedule_episode_show_name"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+			android:textColor="@android:color/primary_text_light"
+			android:lines="1"
+			tools:text="Rusty and the Bit Police"/>
+
+		<TextView
+			android:id="@+id/schedule_episode_season_text"
+			android:layout_below="@+id/schedule_episode_episode_name"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/season"
+			android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+			android:textColor="@android:color/secondary_text_light"
+			tools:text="Season"/>
+		<TextView
+			android:id="@+id/schedule_episode_season_nr"
+			android:layout_below="@+id/schedule_episode_episode_name"
+			android:layout_marginStart="4dp"
+			android:layout_toEndOf="@+id/schedule_episode_season_text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+			android:textColor="@android:color/secondary_text_light"
+			tools:text="45"/>
+
+		<TextView
+			android:id="@+id/schedule_episode_episode_text"
+			android:layout_below="@+id/schedule_episode_episode_name"
+			android:layout_marginStart="16dp"
+			android:layout_toEndOf="@+id/schedule_episode_season_nr"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/episode"
+			android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+			android:textColor="@android:color/secondary_text_light"
+			tools:text="Episode"/>
+		<TextView
+			android:id="@+id/schedule_episode_episode_nr"
+			android:layout_below="@+id/schedule_episode_episode_name"
+			android:layout_marginStart="4dp"
+			android:layout_toEndOf="@+id/schedule_episode_episode_text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+			android:textColor="@android:color/secondary_text_light"
+			tools:text="111"/>
+
+	</RelativeLayout>
+
+
+
+</RelativeLayout>

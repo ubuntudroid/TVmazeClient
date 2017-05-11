@@ -1,0 +1,9 @@
+<resources>
+	<string name="app_name">TVmazeClient</string>
+	<string name="unit_min">min</string>
+	<string name="episode">Episode</string>
+	<string name="season">Season</string>
+	<string name="schedule">Schedule</string>
+	<string name="n_a">n/a</string>
+	<string name="show_details">Show Details</string>
+</resources>

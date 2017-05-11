@@ -1,0 +1,118 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+
+    compileSdkVersion 25
+    buildToolsVersion "26-rc1"
+
+    defaultConfig {
+        applicationId "com.rainerlang.tvmazeclient"
+        minSdkVersion 17
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    maven { url "https://clojars.org/repo/" }
+    maven { url 'https://jitpack.io' }
+}
+
+ext {
+    auto_value = '1.4.1'
+    auto_value_gson = '0.4.6'
+    auto_value_parcel = '0.2.5'
+    butterknife = '8.5.1'
+    dagger = '2.10'
+    fastAdapter = '2.5.2'
+    fastAdapterCommons = '2.5.2'
+    glide = '3.7.0'
+    glideOkhttp3Integration = '1.4.0'
+    gson = '2.8.0'
+    icepick = '3.2.0'
+    loggingInterceptor = '2.0.0'
+    okHttp3 = '3.7.0'
+    retrofit2 = '2.1.0'
+    rxandroid = '1.2.1'
+    rxjava = '1.2.9'
+    supportLibrary = '25.3.1'
+    thirtyInch = '0.8.0-rc4'
+
+    junit = '4.12'
+    mockito = '1.10.19'
+    assertj = '2.5.0'
+    espresso = '2.2.2'
+}
+
+dependencies {
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile "com.android.support:appcompat-v7:${supportLibrary}"
+    compile "com.android.support:design:${supportLibrary}"
+    compile "com.android.support:recyclerview-v7:${supportLibrary}"
+    compile "com.android.support:support-annotations:${supportLibrary}"
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    annotationProcessor "com.google.auto.value:auto-value:${auto_value}"
+    provided "com.google.auto.value:auto-value:${auto_value}"
+    annotationProcessor "com.ryanharter.auto.value:auto-value-gson:${auto_value_gson}"
+    provided "com.ryanharter.auto.value:auto-value-gson:${auto_value_gson}"
+    annotationProcessor "com.ryanharter.auto.value:auto-value-parcel:${auto_value_parcel}"
+
+    compile "com.jakewharton:butterknife:${butterknife}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${butterknife}"
+
+    compile "com.google.dagger:dagger:${dagger}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${dagger}"
+
+    compile ("com.mikepenz:fastadapter:${fastAdapter}@aar") { transitive = true }
+    compile "com.mikepenz:fastadapter-commons:${fastAdapterCommons}@aar"
+
+    compile "com.google.code.gson:gson:${gson}"
+
+    compile "frankiesardo:icepick:${icepick}"
+    annotationProcessor "frankiesardo:icepick-processor:${icepick}"
+
+    compile "com.github.bumptech.glide:glide:${glide}"
+    compile "com.github.bumptech.glide:okhttp3-integration:${glideOkhttp3Integration}@aar"
+
+    compile ("com.github.ihsanbal:LoggingInterceptor:${loggingInterceptor}") {
+        exclude group: 'org.json', module: 'json'
+    }
+
+    compile "io.reactivex:rxandroid:${rxandroid}"
+    compile "io.reactivex:rxjava:${rxjava}"
+    compile ("com.squareup.retrofit2:retrofit:${retrofit2}") {
+        exclude module: "okhttp"
+    }
+    compile "com.squareup.retrofit2:converter-gson:${retrofit2}"
+    compile "com.squareup.retrofit2:adapter-rxjava:${retrofit2}"
+    compile "com.squareup.okhttp3:okhttp:${okHttp3}"
+    compile "com.squareup.okhttp3:logging-interceptor:${okHttp3}"
+
+    compile "net.grandcentrix.thirtyinch:thirtyinch-rx:${thirtyInch}"
+
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile "junit:junit:${junit}"
+
+}
