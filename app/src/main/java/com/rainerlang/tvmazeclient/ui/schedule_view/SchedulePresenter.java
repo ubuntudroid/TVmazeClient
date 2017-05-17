@@ -28,7 +28,7 @@ class SchedulePresenter extends BasePresenter<ScheduleMvp.View> implements Sched
   public void onItemClicked(ScheduleItemView scheduleItemView, int position) {
     manageSubscription(
         Observable.from(episodes)
-            .filter(episode -> episode.id()==scheduleItemView.getModel().id())
+            .takeFirst(episode -> episode.id()==scheduleItemView.getModel().id())
             .compose(RxHelper.applySchedulersIo())
             .subscribe(episode -> sendToView(view -> view.startEpisodeActivity(episode))));
   }
